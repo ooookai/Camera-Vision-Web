@@ -1,0 +1,105 @@
+<html>
+<!-- Camera is only for Android, iOS is not allowed camera permission -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Use camera of your device to take a picture, and then transfer it to try Google Cloud Vision API.">
+  <meta name="author" content="ooookai">
+
+  <title>Camera Vision - Try Google Cloud Vision API</title>
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="ooookai.github.io/Camera-Vision-Web/" />
+  <!-- <meta property="og:image" content="" /> -->
+
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+  <script src="js/jquery-1.12.2.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/app.js"></script>
+
+</head>
+
+<body>
+  <div style="text-align:center">
+    <h2>Camera Vision</h2>
+    <p>by ooookai</p>
+  </div>
+
+  <div class="container">
+    <!-- <input class="btn" id="inputCamera" type="file" accept="image/*;capture=camera"> -->
+    <input class="btn" id="inputCamera" type="file" accept="image/*">
+    <p></p>
+    <!--
+    <dl class="visionResult dl-horizontal">
+    </dl>
+    -->
+  </div>
+
+  <img src="" style="display:none; ">
+
+  <div>
+    <div style="text-align:center; margin: auto; position: absolute; top: 50%; left: 0; bottom: 0; right: 0;">
+      <h1 id="recognizingText" style="display:none; text-shadow: white 0px 0px 0.3em, white 0px 0px 3em;">recognizing...</h1>
+    </div>
+    <video autoplay></video>
+  </div>
+
+  <canvas style="display:none; "></canvas>
+
+  <button class="btn btn-default btn-block" id="getVisionBtn">Get Vision</button>
+
+  <!-- Small modal -->
+  <div id="visionGuide" class="modal fade">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">User Guide</h4>
+        </div>
+        <div class="modal-body">
+          <dl class="visionGuide">
+            <dt>Vision pictures</dt>
+            <dd>Take a picture or choose a file.</dd>
+            <dt>Please enable Network connection</dt>
+            <dd>The picture will be computed in the server.</dd>
+            <dt>Vision speed</dt>
+            <dd>Normally, response time is less than 2 sec.</dd>
+            <dt>Developer: Kai</dt>
+          </dl>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+
+  <!-- Small modal -->
+  <div id="visionResult" class="modal fade">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Result</h4>
+        </div>
+        <div class="modal-body">
+          <dl class="visionResult dl-horizontal">
+          </dl>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+</body>
+
+</html>
