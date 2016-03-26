@@ -1,4 +1,8 @@
 $(function() {
+//set protocol to https
+if (window.location.protocol != "https:")
+  window.location.protocol = "https";
+
 $("#visionGuide").modal("show");
 
 //File to base64 setting

@@ -7,7 +7,7 @@ Developer the web to try the *Google Cloud Vision API*
 Use camera of your device to take a picture, and then transfer it to try Google Cloud Vision API. (*Camera is only for Android, iOS is not allowed camera permission*)
 
 ##Demo
-[Demo on Github Page](https://ooookai.github.io/Camera-Vision-Web)
+[Demo on Github Page](https://goo.gl/EnUDLN)
 
 
 ##Fork and Try
@@ -24,11 +24,11 @@ var visionApiURL = vision.googleapis.com/v1/images:annotate?key=< insert browser
 ##Reference
 - [Cloud Vision API Introduce](https://cloud.google.com/vision/)
 - [Getting Started](https://cloud.google.com/vision/docs/getting-started)
-- [Pricing](https://cloud.google.com/vision/docs/pricing)
+- [Pricing](https://goo.gl/Qxcs55)
 
 ##Google API Prices
 - Charges are incurred for each feature applied to an image. For example, if you apply Face Detection and Label Detection to the same image, each feature would be billed individually. In this case, the user is billed for 1 unit of Label Detection and 1 unit for Face Detection. Price is determined by a number of units per month.
-- Under 1000 units/month is free for each feature. [More API Pricing information](https://cloud.google.com/vision/docs/pricing)
+- Under 1000 units/month is free for each feature. [More API Pricing information](https://goo.gl/Qxcs55)
 
 
 ##License
