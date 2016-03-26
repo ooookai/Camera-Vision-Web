@@ -1,3 +1,4 @@
+$(function() {
 $("#visionGuide").modal("show");
 
 //File to base64 setting
@@ -5,10 +6,10 @@ $("#visionGuide").modal("show");
 File.prototype.convertToBase64 = function(callback) {
     var FR = new FileReader();
     FR.onload = function(e) {
-      callback(e.target.result)
+      callback(e.target.result);
     };
     FR.readAsDataURL(this);
-  }
+  };
   //end//
 
 $("#inputCamera").on('change', function() {
@@ -17,7 +18,7 @@ $("#inputCamera").on('change', function() {
   var selectedFile = this.files[0];
   selectedFile.convertToBase64(function(base64) {
     getVision(base64.split(",")[1]);
-  }, "json")
+  }, "json");
 });
 
 function getVision(img) {
@@ -43,13 +44,13 @@ function getVision(img) {
   var visionRequest = {
     "image": visionImage,
     "features": visionFeature
-  }
+  };
 
   visionData = {
     "requests": [
       visionRequest
     ]
-  }
+  };
 
   // console.log(visionData);
 
@@ -72,6 +73,8 @@ function getVision(img) {
       console.log(response.responses[0].labelAnnotations);
       console.log(response.responses[0].textAnnotations);
 
+      var i = 0;
+
       $(".visionResult").html("");
 
       if (response.responses[0].labelAnnotations) {
@@ -81,11 +84,11 @@ function getVision(img) {
 
           $(".visionResult").append($("<dt/>").text("Label"));
 
-          for (var i = 0; i < visionLabel.length; i++) {
+          for (i = 0; i < visionLabel.length; i++) {
             // console.log("visionText"+ (i+1) +" : "+ visionText[i] );
 
             // $(".visionResult").append($("<dt/>").text("Label-" + (i + 1)));
-            $(".visionResult").append($("<dd/>").text(visionLabel[i].description + "　\[ score: " + visionLabel[i].score + " \]"));
+            $(".visionResult").append($("<dd/>").text(visionLabel[i].description + "　[ score: " + visionLabel[i].score + " ]"));
           }
         } else {
           $(".visionResult").append($("<h4/>").text("No Label"));
@@ -99,11 +102,11 @@ function getVision(img) {
 
           $(".visionResult").append($("<dt/>").text("Logo"));
 
-          for (var i = 0; i < visionLogo.length; i++) {
+          for (i = 0; i < visionLogo.length; i++) {
             // console.log("visionText"+ (i+1) +" : "+ visionText[i] );
 
             // $(".visionResult").append($("<dt/>").text("Logo-" + (i + 1)));
-            $(".visionResult").append($("<dd/>").text(visionLogo[i].description + "　\[ score: " + visionLogo[i].score + " \]"));
+            $(".visionResult").append($("<dd/>").text(visionLogo[i].description + "　[ score: " + visionLogo[i].score + " ]"));
           }
         } else {
           $(".visionResult").append($("<h4/>").text("No Logo"));
@@ -113,7 +116,7 @@ function getVision(img) {
       if (response.responses[0].textAnnotations) {
         var visionText = response.responses[0].textAnnotations[0].description.split(/\n/);
         if (visionText) {
-          for (var i = 0; i < visionText.length - 1; i++) {
+          for (i = 0; i < visionText.length - 1; i++) {
             // console.log("visionText"+ (i+1) +" : "+ visionText[i] );
 
             $(".visionResult").append($("<dt/>").text("Text-" + (i + 1)));
@@ -164,7 +167,7 @@ $("video").on("click", function() {
   ctx.drawImage(video, 0, 0, $(window).width(), $(window).width());
   // "image/webp" works in Chrome 18. In other browsers, this will fall back to image/png.
   getVision(canvas.toDataURL('image/png').split(",")[1]);
-})
+});
 
 var mediaSourcesList = {
   "video": [{}, {}, {}],
@@ -267,6 +270,7 @@ function getMedia() {
       alert(error.constraintName + "-" + error.message + "-" + error.name);
     }
   );
-};
+}
 
 setMedia();
+});
