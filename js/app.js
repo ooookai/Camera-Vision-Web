@@ -28,7 +28,7 @@ $("#inputCamera").on('change', function() {
 function getVision(img) {
   // alert("get vision");
 
-  var visionApiURL = "https://vision.googleapis.com/v1/images:annotate?key=< insert browser_api_key_here >";
+  var visionApiURL = "https://vision.googleapis.com/v1/images:annotate?key=AIzaSyAqbLYT5jwKrvvXZO2fdfH4zgWpf4dLo_0";
 
   var visionData = {};
   var visionImage = {
