@@ -1,0 +1,11 @@
+video{
+  width:100vw;
+}
+
+canvas{
+  width:100vw;
+}
+
+.modal dl *{
+  line-height:1.8em;
+}
