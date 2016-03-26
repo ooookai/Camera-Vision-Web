@@ -4,7 +4,7 @@
 Developer the web to try the *Google Cloud Vision API*
 
 ##Process
-Use camera of your device to take a picture, and then transfer it to try Google Cloud Vision API. (*iOS is not allowed to get camera auth*)
+Use camera of your device to take a picture, and then transfer it to try Google Cloud Vision API. (*Camera is only for Android, iOS is not allowed camera permission*)
 
 ##Demo
 [Demo on Github Page](http://ooookai.github.io/Camera-Vision-Web)
@@ -17,7 +17,7 @@ Use camera of your device to take a picture, and then transfer it to try Google 
  4. Get your project API key, and then Update it of request URL in app.js
 ```js
 // Request URL
-vision.googleapis.com/v1/images:annotate?key=< insert browser_api_key_here >;
+var visionApiURL = vision.googleapis.com/v1/images:annotate?key=< insert browser_api_key_here >;
 ```
 *****
 
