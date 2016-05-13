@@ -7,7 +7,8 @@ Developer the web to try the *Google Cloud Vision API*
 Use camera of your device to take a picture, and then transfer it to try Google Cloud Vision API. (*Camera is only for Android, iOS is not allowed camera permission*)
 
 ##Demo
-[Demo on Github Page](https://goo.gl/EnUDLN)
+[Demo on Github Page](https://goo.gl/EnUDLN) 
+ > Service is over the limit of Google.
 
 
 ##Fork and Try
